@@ -27,7 +27,7 @@ const server=app.listen(port, listening)
 function listening(){
     console.log(`server running on :http://localhost:${port}`)
 }
-projectData = []
+projectData = {}
 
 app.get('/all', getData)
 
