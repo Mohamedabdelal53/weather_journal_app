@@ -6,8 +6,8 @@
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
-let baseurl="http://api.openweathermap.org/data/2.5/weather?zip="
-let apikey="&appid=b55359eb2609f0b639b8aeea81310ea3"
+const baseurl="http://api.openweathermap.org/data/2.5/weather?zip="
+const apikey="&appid=b55359eb2609f0b639b8aeea81310ea3"
 
 document.getElementById("generate").addEventListener("click",performaction)
 function performaction(e){
