@@ -4,10 +4,10 @@
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 const baseurl="http://api.openweathermap.org/data/2.5/weather?zip="
-const apikey="&appid=b55359eb2609f0b639b8aeea81310ea3"
+const apikey="&appid=b55359eb2609f0b639b8aeea81310ea3&units=metric"
 
 document.getElementById("generate").addEventListener("click",performaction)
 function performaction(e){
@@ -61,10 +61,10 @@ const updateUI = async () => {
   const request = await fetch('/all');
   try{
     const allData = await request.json();
-    document.getElementById('date').innerHTML = "DATE:"+allData[0].date;
-    document.getElementById('temp').innerHTML = "TEMP:"+allData[0].temp;
-    document.getElementById('content').innerHTML = "FEELING:"+allData[0].content;
-    document.getElementById('name').innerHTML = "NAME OF CITY: "+allData[0].name;
+    document.getElementById('date').innerHTML = "DATE:"+allData.date;
+    document.getElementById('temp').innerHTML = "TEMP:"+allData.temp;
+    document.getElementById('content').innerHTML = "FEELING:"+allData.content;
+    document.getElementById('name').innerHTML = "NAME OF CITY: "+allData.name;
 
   }catch(error){
     console.log("error", error);
