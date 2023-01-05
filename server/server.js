@@ -40,12 +40,11 @@ function getData (req, res) {
 app.post('/add', addData)
 
 function addData(req,res){
-    newEntry = {
+    projectData = {
     date: req.body.date,
     temp: req.body.temp,
     content: req.body.content,
     name: req.body.name,
     }
-    projectData.push(newEntry);
-    res.send(projectData)
+    res.send(projectData);
 }
